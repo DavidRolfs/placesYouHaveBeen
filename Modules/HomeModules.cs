@@ -27,6 +27,10 @@ namespace Places
       Place place = Place.Find(parameters.id);
         return View["/place.cshtml", place];
       };
+      Post["/places_cleared"] = _ => {
+        Place.ClearAll();
+        return View["/cleared.cshtml"];
+      };
     }
   }
 }
