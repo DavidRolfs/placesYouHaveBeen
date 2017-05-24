@@ -15,7 +15,7 @@ namespace Places
         return View["addPlace.cshtml"];
       };
       Post["/viewPlaces"] = _ => {
-        Place newPlace = new Place(Request.Form["new-place"]);
+        Place newPlace = new Place(Request.Form["new-place"], Request.Form["new-photo"]);
         List<Place> allPlaces = Place.GetAll();
         return View["Places.cshtml", allPlaces];
       };

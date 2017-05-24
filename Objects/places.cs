@@ -5,12 +5,14 @@ namespace Places.Objects
   public class Place
   {
     private string _city;
+    private string _photo;
     private int _id;
     private static List<Place> _instances = new List<Place> {};
 
-    public Place (string city)
+    public Place (string city, string photo)
     {
       _city = city;
+      _photo = photo;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -21,6 +23,14 @@ namespace Places.Objects
     public void SetCity(string newCity)
     {
       _city = newCity;
+    }
+    public string GetPhoto()
+    {
+      return _photo;
+    }
+    public void SetPhoto(string newPhoto)
+    {
+      _photo = newPhoto;
     }
     public int GetId()
     {
