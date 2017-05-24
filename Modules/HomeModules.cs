@@ -19,6 +19,14 @@ namespace Places
         List<Place> allPlaces = Place.GetAll();
         return View["Places.cshtml", allPlaces];
       };
+      Get["/viewPlaces"] = _ => {
+        List<Place> allPlaces = Place.GetAll();
+        return View["Places.cshtml", allPlaces];
+      };
+      Get["/viewPlaces/{id}"] = parameters => {
+      Place place = Place.Find(parameters.id);
+        return View["/place.cshtml", place];
+      };
     }
   }
 }
